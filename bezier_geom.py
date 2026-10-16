@@ -2,7 +2,7 @@
 Pure-numpy cubic Bezier geometry helpers: splitting, curve-curve intersection,
 polygon flattening, and point-in-polygon testing.
 
-No dependency on inkex, svgpathtools, or shapely — these are not reliably
+No dependency on inkex, svgpathtools, or shapely - these are not reliably
 available in Inkscape's bundled Python environment. Self-contained so it can
 be unit-tested with plain `python3 bezier_geom.py`.
 """
