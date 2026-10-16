@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+
+	<name>Cut Along Shape</name>
+	<id>maps_edge.cut_along_shape</id>
+
+	<param name="mode" type="optiongroup" appearance="radio" gui-text="Mode:">
+		<option value="delete_inside">Delete Inside</option>
+		<option value="cut_only">Cut Only</option>
+	</param>
+
+	<param name="help_delete_inside" type="description" appearance="header">Delete Inside</param>
+	<param name="help" type="description">Select one closed shape (rectangle, circle, or closed path) plus one or more open paths. Every crossing gets a node inserted at the exact intersection, the path breaks there, pieces inside the shape are discarded, and the shape is deleted.</param>
+
+	<param name="help_cut_only" type="description" appearance="header">Cut Only</param>
+	<param name="help2" type="description">Select a cutting line/object plus one or more paths to cut. Whichever selected object is topmost in z-order is the cutter (only its outline is used, even if it's a closed shape). Every crossing gets a node inserted at the exact intersection, the path breaks there, and the cutter is deleted afterward. No cut piece is discarded.</param>
+
+	<effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu name="Map's Edge Tools" translatable="no">
+				<submenu name="General" translatable="no">
+					<submenu name="Paths" translatable="no" />
+				</submenu>
+			</submenu>
+		</effects-menu>
+	</effect>
+
+	<script>
+		<command location="inx" interpreter="python">cut_along_shape.py</command>
+	</script>
+
+</inkscape-extension>
